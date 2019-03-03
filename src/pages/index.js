@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
-  render() {
+  render () {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
@@ -15,7 +15,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
+          title='All posts'
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Bio />

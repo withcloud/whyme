@@ -36,7 +36,9 @@
     "typography-theme-wordpress-2016": "^0.16.18"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "babel-eslint": "^10.0.1",
+    "prettier": "^1.16.4",
+    "standard": "^12.0.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
@@ -49,11 +51,18 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
+    "dev": "gatsby develop",
+    "lint": "standard",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "serve": "gatsby serve"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "/public/**/*"
+    ]
   }
 }
