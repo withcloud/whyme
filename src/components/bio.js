@@ -1,14 +1,6 @@
-/**
- * Bio component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
-
+import profilePic from '../../content/assets/profile-pic.jpg'
 import { rhythm } from '../utils/typography'
 
 function Bio () {
@@ -16,34 +8,28 @@ function Bio () {
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author, social } = data.site.siteMetadata
         return (
           <div
             style={{
               display: `flex`,
-              marginBottom: rhythm(2.5)
+              marginBottom: rhythm(2)
             }}
           >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
+            <img
+              src={profilePic}
+              alt={`Comus Leong`}
               style={{
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`
-              }}
-              imgStyle={{
-                borderRadius: `50%`
+                width: rhythm(2),
+                height: rhythm(2),
+                borderRadius: '50%'
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
+              <a href='https://withcloud.co'>WithCloud</a> Team 的開發日常 blog.
+              <br />
+              我們在澳門生活和開發有用的東西.
             </p>
           </div>
         )
@@ -64,9 +50,6 @@ const bioQuery = graphql`
     site {
       siteMetadata {
         author
-        social {
-          twitter
-        }
       }
     }
   }

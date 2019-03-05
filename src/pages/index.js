@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Bio from '../components/bio'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Bio from '../components/Bio'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import Footer from '../components/Footer'
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
@@ -14,10 +15,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title='All posts'
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
+        <SEO />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
@@ -41,6 +39,7 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
+        <Footer />
       </Layout>
     )
   }

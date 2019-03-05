@@ -3,6 +3,9 @@ import Wordpress2016 from 'typography-theme-wordpress-2016'
 
 Wordpress2016.overrideThemeStyles = () => {
   return {
+    a: {
+      color: '#ff5050'
+    },
     'a.gatsby-resp-image-link': {
       boxShadow: `none`
     }

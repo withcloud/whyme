@@ -15,9 +15,10 @@ class Layout extends React.Component {
       header = (
         <h1
           style={{
-            ...scale(1.5),
+            ...scale(0.75),
             marginBottom: rhythm(1.5),
-            marginTop: 0
+            marginTop: 0,
+            maxWidth: 310
           }}
         >
           <Link
@@ -28,7 +29,8 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            Why&nbsp;Me?{' '}
+            Why&nbsp;Not&nbsp;Me!
           </Link>
         </h1>
       )
@@ -44,7 +46,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`
+              color: '#ff5050'
             }}
             to={`/`}
           >
@@ -64,11 +66,6 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
-        </footer>
       </div>
     )
   }
