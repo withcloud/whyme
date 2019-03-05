@@ -55,6 +55,9 @@ jobs:
       - deploy:
           name: Deploy & Alias
           command: |
+            echo 'export PATH=$(yarn global bin):$PATH' >> $BASH_ENV
+            source $BASH_ENV
+
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               NOW_URL=$(now --token $ZEIT_TOKEN --team $ZEIT_TEAM --local-config now.json)
               echo "NOW_URL" $NOW_URL
