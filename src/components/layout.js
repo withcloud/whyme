@@ -2,10 +2,22 @@
 
 import React from 'react'
 import { Link } from 'gatsby'
+import Helmet from 'react-helmet'
 
 import { rhythm, scale } from '../utils/typography'
 
 class Layout extends React.Component {
+  state = {
+    theme: null
+  }
+
+  componentDidMount () {
+    this.setState({ theme: window.__theme })
+    window.__onThemeChange = () => {
+      this.setState({ theme: window.__theme })
+    };
+  }
+
   render () {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
@@ -16,7 +28,7 @@ class Layout extends React.Component {
         <h1
           style={{
             ...scale(0.75),
-            marginBottom: rhythm(1.5),
+            marginBottom: 0,
             marginTop: 0,
             maxWidth: 310
           }}
@@ -39,7 +51,10 @@ class Layout extends React.Component {
         <h3
           style={{
             fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0
+            marginTop: 0,
+            marginBottom: 0,
+            height: 42, // because
+            lineHeight: '2.625rem'
           }}
         >
           <Link
@@ -58,14 +73,38 @@ class Layout extends React.Component {
     return (
       <div
         style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`
+          color: 'var(--textNormal)',
+          background: 'var(--bg)',
+          transition: 'color 0.2s ease-out, background 0.2s ease-out',
+          minHeight: '100vh'
         }}
       >
-        <header>{header}</header>
-        <main>{children}</main>
+        <Helmet
+          meta={[
+            {
+              name: 'theme-color',
+              content: this.state.theme === 'light' ? '#ffa8c5' : '#282c35'
+            }
+          ]}
+        />
+        <div
+          style={{
+            marginLeft: `auto`,
+            marginRight: `auto`,
+            maxWidth: rhythm(24),
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`
+          }}
+        >
+          <header style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '2.625rem'
+          }}>
+            {header}
+          </header>
+          {children}
+        </div>
       </div>
     )
   }
