@@ -1,6 +1,7 @@
 {
   "version": 2,
   "routes": [
+    { "src": "/api/email", "dest": "api/email.js" },
     {
       "src": "/static/(.*)",
       "dest": "/static/$1",
@@ -15,13 +16,12 @@
       "src": "/(.*)",
       "dest": "/$1",
       "headers": { "cache-control": "public, max-age=0, must-revalidate" }
-    },
-    { "src": "api/**/*.js", "use": "@now/node" }
+    }
   ],
   "alias": "whyme.dev",
   "builds": [
-    { "use": "@now/static-build", "src": "package.json", "config": { "distDir": "public" } },
-    { "src": "/api/email", "dest": "api/email.js" }
+    { "src": "api/**/*.js", "use": "@now/node" },
+    { "use": "@now/static-build", "src": "package.json", "config": { "distDir": "public" } }
   ],
   "github": {
     "enabled": false
