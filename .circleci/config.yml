@@ -61,7 +61,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               NOW_URL=$(now --token $ZEIT_TOKEN --team $ZEIT_TEAM --local-config now.json)
               echo "NOW_URL" $NOW_URL
-              NOW_ALIAS=$(jq -r '.alias[0]' now.json)
+              NOW_ALIAS=$(jq -r '.alias' now.json)
               echo "NOW_ALIAS" $NOW_ALIAS
               now --token $ZEIT_TOKEN --team $ZEIT_TEAM alias set $NOW_URL $NOW_ALIAS
             else
