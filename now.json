@@ -15,13 +15,18 @@
       "src": "/(.*)",
       "dest": "/$1",
       "headers": { "cache-control": "public, max-age=0, must-revalidate" }
-    }
+    },
+    { "src": "api/**/*.js", "use": "@now/node" }
   ],
   "alias": "whyme.dev",
   "builds": [
-    { "use": "@now/static-build", "src": "package.json", "config": { "distDir": "public" } }
+    { "use": "@now/static-build", "src": "package.json", "config": { "distDir": "public" } },
+    { "src": "/api/email", "dest": "api/email.js" }
   ],
   "github": {
     "enabled": false
+  },
+  "env": {
+    "POSTMARK_SERVER_TOKEN": "@postmark-server-token"
   }
 }
