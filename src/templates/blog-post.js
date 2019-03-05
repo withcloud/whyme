@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import moment from 'moment-timezone'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -32,7 +33,7 @@ class BlogPostTemplate extends React.Component {
                   marginTop: rhythm(-4 / 5)
                 }}
               >
-                {post.frontmatter.date}
+                {moment(post.frontmatter.date).tz('Asia/Macau').format('MMMM DD, YYYY')}
               </p>
             </header>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -93,7 +94,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date
         description
       }
     }
