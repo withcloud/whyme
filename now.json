@@ -20,5 +20,8 @@
   "alias": "whyme.dev",
   "builds": [
     { "use": "@now/static-build", "src": "package.json", "config": { "distDir": "public" } }
-  ]
+  ],
+  "github": {
+    "enabled": false
+  }
 }
