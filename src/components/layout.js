@@ -15,7 +15,7 @@ class Layout extends React.Component {
     this.setState({ theme: window.__theme })
     window.__onThemeChange = () => {
       this.setState({ theme: window.__theme })
-    };
+    }
   }
 
   render () {
