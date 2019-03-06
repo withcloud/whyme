@@ -91,9 +91,9 @@ $ rm ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
 
 ### 學習 Redis 的平台
 
-1.[RunNoob](http://www.runoob.com/redis/redis-commands.html)
+1. [RunNoob](http://www.runoob.com/redis/redis-commands.html)
 
-2.[TutorialsPoint](https://www.tutorialspoint.com/redis/)
+2. [TutorialsPoint](https://www.tutorialspoint.com/redis/)
 
 ### 測試 Redis 指令的平台
 
