@@ -16,8 +16,9 @@ const sendEmail = async (req, res) => {
   const feed = await parser.parseURL('https://whyme.dev/rss.xml')
 
   const startTime = moment().subtract(1, 'day')
+  const current = moment()
   const posts = feed.items.filter(item => {
-    return moment(item.isoDate).isSameOrAfter(startTime)
+    return moment(item.isoDate).isSameOrAfter(startTime) && moment(item.isoDate).isSameOrBefore(current)
   })
 
   const messages = []
