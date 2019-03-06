@@ -25,6 +25,7 @@ const sendEmail = async (req, res) => {
     const content = post['content:encoded']
     const link = post.link
     const title = post.title
+    const author = post.author || ''
     emails.forEach(email => {
       messages.push({
         From: 'WithCloud Why Me <whyme@withcloud.co>',
@@ -33,7 +34,8 @@ const sendEmail = async (req, res) => {
         TemplateModel: {
           link,
           content,
-          title
+          title,
+          author
         },
         InlineCss: true
       })
