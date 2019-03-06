@@ -2,6 +2,9 @@
 title: 在 Why Me 建立新文章
 date: "2019-03-06T12:00:00+08:00"
 description: 將開發的事分享給我們
+authors:
+  - name: Comus Leong
+    avatar: /team/comus.jpg
 ---
 
 一個概念，**共享**，我們會將開發的過程做整理然後寫成 Blog 的文章。

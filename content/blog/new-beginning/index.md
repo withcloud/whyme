@@ -2,6 +2,9 @@
 title: 新的開始，為什麼是我？
 date: "2019-03-06T03:15:00+08:00"
 description: 我們將開發的文章都放在 Why Me.
+authors:
+  - name: Comus Leong
+    avatar: /team/comus.jpg
 ---
 
 我們的公司是澳門的 **地域有限公司**，而 **WithCloud** 是我們 Github 放 Projects 的地方，也將會是建立各種雲端應用的平台。

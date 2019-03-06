@@ -2,6 +2,9 @@
 title: "學習 Redis 如此簡單"
 date: "2019-03-06T11:41:00+08:00"
 description: "一天就學會 Redis"
+authors:
+  - name: Srib Chao
+    avatar: /team/srib.jpg
 ---
 
 [RedisWebsite]: https://redis.io/ "RedisWebsite"

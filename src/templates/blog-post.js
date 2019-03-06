@@ -12,6 +12,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const authors = post.frontmatter.authors || []
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -25,16 +26,56 @@ class BlogPostTemplate extends React.Component {
               <h1 style={{ color: 'var(--textTitle)' }}>
                 {post.frontmatter.title}
               </h1>
-              <p
-                style={{
-                  ...scale(-1 / 5),
-                  display: 'block',
-                  marginBottom: rhythm(1),
-                  marginTop: rhythm(-4 / 5)
-                }}
-              >
-                {moment(post.frontmatter.date).tz('Asia/Macau').format('MMMM DD, YYYY')}
-              </p>
+              <div style={{
+                marginBottom: rhythm(1),
+                marginTop: rhythm(-4 / 5)
+              }}>
+                <p
+                  style={{
+                    ...scale(-1 / 5),
+                    display: 'block',
+                    margin: 0
+                  }}
+                >
+                  {moment(post.frontmatter.date).tz('Asia/Macau').format('MMMM DD, YYYY')}
+                </p>
+                {!!authors.length && (
+                  <div style={{
+                    ...scale(-1 / 5),
+                    marginTop: rhythm(2 / 5)
+                  }}>
+                    {authors.map(author => {
+                      return (
+                        <p
+                          key={author.name}
+                          style={{
+                            margin: 0,
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            paddingRight: '2rem',
+                            marginBottom: '0.5rem',
+                            whiteSpace: 'nowrap'
+                          }}
+                        >
+                          <img
+                            src={author.avatar}
+                            alt={author.name}
+                            style={{
+                              width: '2rem',
+                              height: '2rem',
+                              marginRight: '0.5rem',
+                              borderRadius: '50%',
+                              background: '#efefef',
+                              marginBottom: 0
+                            }}
+                          />
+                          <span>{author.name}</span>
+                        </p>
+                      )
+                    })}
+                  </div>
+                )}
+              </div>
             </header>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </article>
@@ -96,6 +137,10 @@ export const pageQuery = graphql`
         title
         date
         description
+        authors {
+          name
+          avatar
+        }
       }
     }
   }
