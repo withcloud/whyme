@@ -36,7 +36,7 @@ config.yml 文件位於項目頂部名為 .circleci 的文件夾中。 CircleCI�
 
 5. 將以下內容添加到config.yml文件中。
 
-```yml
+```yaml
 version: 2.0
 jobs:
  build:
@@ -76,7 +76,7 @@ CircleCI 配置語法非常簡單。最棘手的部分通常是**縮進**。確�
 
 3. 現在，添加第二個運行步驟並執行 ls -al 以查看所有代碼都可用。
 
-```yml
+```yaml
 version: 2.0
 jobs:
  build:
@@ -118,7 +118,7 @@ jobs:
 
 2. 這是一個非常簡單但卻非常強大的變化。 我們將為構建作業 (build job)添加對 docker image的引用。
 
-```yml
+```yaml
 version: 2.0
 jobs:
  build:
@@ -164,7 +164,7 @@ jobs:
 
 所有工作名稱都是任意的。這使您可以根據需要創建複雜的工作流，同時保持對下一個讀取config.yml的開發人員的有意義和清晰。
 
-```yml
+```yaml
 version: 2.0
 jobs:
  Hello-World:
