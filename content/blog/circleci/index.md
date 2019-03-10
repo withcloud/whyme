@@ -7,6 +7,13 @@ authors:
     avatar: /team/srib.jpg
 ---
 
+什麼是CI
+
+持續集成（Continuous Integration）通常縮寫為 CI，
+持續集成指的是，當代碼有變更時，立即進行構建和測試，反饋運行結果，我們可以根據測試結果，確定新代碼是否可以和原有代碼正確的集成在一起。
+讓你能夠在開發中隨時發現問題，在快速的產品迭代中還可以保持很高的質量。因為修復問題的成本隨著時間的推移而增長，越早發現，修復成本越低。
+
+---
 
 首先在自己的 probject 的根目錄，建立一個 **.circleci** floder，然後新增一個叫 **config.yml** file 在剛剛的 floder 之下
 
@@ -301,3 +308,6 @@ jobs:
 ---
 
 文章會持續更新，喜歡的話可以在瀏覽器將文章加入 bookmark
+
+參考文章:
+[circleci concepts](https://circleci.com/docs/2.0/concepts/#section=getting-started)
