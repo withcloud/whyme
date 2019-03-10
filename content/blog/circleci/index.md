@@ -307,7 +307,5 @@ jobs:
 
 ---
 
-文章會持續更新，喜歡的話可以在瀏覽器將文章加入 bookmark
-
 參考文章:
 [circleci concepts](https://circleci.com/docs/2.0/concepts/#section=getting-started)
