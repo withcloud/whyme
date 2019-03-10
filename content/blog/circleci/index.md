@@ -17,7 +17,7 @@ authors:
 
 首先在自己的 probject 的根目錄，建立一個 **.circleci** floder，然後新增一個叫 **config.yml** file 在剛剛的 floder 之下
 
-```yml
+```yaml
 version: 2 # use CircleCI 2.0(用 CircleCI 2.0)
 jobs: # a collection of steps(一系列步驟)
   build: # runs not using Workflows must have a `build` job as entry point（運行不使用 Workflows 必須有一個 `build` 作為入口點）
@@ -74,7 +74,7 @@ CircleCI Orbs是配置元素的可共享包，包括作業，命令和執行程�
 導入現有球體
 要導入現有的 orb，請為每個orb的2.1 .circleci / config.yml文件添加，例如：
 
-```
+```yaml
 version: 2.1
 
 orbs:
@@ -117,7 +117,7 @@ CircleCI 項目共享相關代碼存儲庫的名稱，並在 CircleCI app 的 Pr
 
 步驟(steps)是執行工作(job)所需的操作。 步驟通常是可執行命令(command)的集合。 例如，checkout 步驟通過 SSH 檢出作業(job)的源代碼。 然後，run 步驟默認使用 non-login shell 執行 make test 命令。
 
-```yml
+```yaml
 #...
     steps:
       - checkout # Special step to checkout your source code
@@ -136,7 +136,7 @@ CircleCI 項目共享相關代碼存儲庫的名稱，並在 CircleCI app 的 Pr
 
 映像是一個打包的系統(packaged system)，其中包含創建正在運行的容器的說明。 主容器由.circleci / config.yml文件中列出的第一個映像。 這是使用 Docker 程序為 jobs 執行 commands 的地方。
 
-```yml
+```yaml
  version 2
  jobs:
    build1: # job name
@@ -180,7 +180,7 @@ CircleCI 項目共享相關代碼存儲庫的名稱，並在 CircleCI app 的 Pr
 
 緩存存儲中的存儲文件或文件目錄，例如依賴項或源代碼。 每個作業(job)可能包含特殊步驟(special steps)，用於緩存先前作業(job)的依賴關係以加速構建。
 
-```yml
+```yaml
 version: 2
 jobs:
   build1:
@@ -216,7 +216,7 @@ jobs:
 
 ![](./workflow.png)
 
-```yml
+```yaml
 version: 2
 jobs:
   build1:
@@ -275,7 +275,7 @@ Workspaces and Artifacts（工作區和工件）
 
 ![](./workflowstore.png)
 
-```yml
+```yaml
 version: 2
 jobs:
   build1:
