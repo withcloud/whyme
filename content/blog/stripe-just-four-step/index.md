@@ -195,5 +195,59 @@ fetch("/charge", {
 PUBLISHABLE_KEY=123456 SECRET_KEY=123456 node app.js
 ```
 
+## 額外功能
+
+# Billing
+
+Stripe Billing 是 Stripe 平台中的定期計費引擎。它的工作是生成發票。 然後，結算引擎會自動收取這些發票的付款。
+
+發票有兩種方式創建：
+
+Manually(手動): 一次性發票
+Automatically(自動): 定期訂閱。
+
+## Manually
+## Automatically
+
+定義產品
+
+```js
+// 設置您的密鑰：
+// https://dashboard.stripe.com/account/apikeys
+var stripe = require("stripe")("secret key");
+
+const product = stripe.products.create({
+  name: 'My SaaS Platform',
+  // type: 'service'
+  // type: 'good',要加 sku
+  type: 'service',
+});
+```
+
+定義定價
+
+```js
+var stripe = require("stripe")("123456");
+
+const plan = stripe.plans.create({
+  product: 'prod_CbvTFuXWh7BPJH',
+  nickname: 'SaaS Platform USD',
+  currency: 'usd',
+  interval: 'month',
+  amount: 10000,
+});
+```
+
+訂閱
+
+```js
+stripe.subscriptions.create({
+  customer: 'cus_Ef5iQcLD694Ubg',
+  items: [{plan: plan.id}],
+});
+```
 最後附上可以測試的信用號 [StripeCreditCard](https://stripe.com/docs/testing#cards)
 
+---
+
+文章會持續更新，喜歡的話可以在瀏覽器將文章加入 bookmark
