@@ -1,6 +1,6 @@
 ---
 title: "Stripe CheckOut 如此簡單"
-date: "2019-03-10T19:00:00+08:00"
+date: "2019-03-08T14:00:00+08:00"
 description: "學習 Stripe CheckOut 只需四步"
 authors:
   - name: Srib Chao
@@ -197,7 +197,7 @@ PUBLISHABLE_KEY=123456 SECRET_KEY=123456 node app.js
 
 ## 額外功能
 
-# Billing
+### Billing
 
 Stripe Billing 是 Stripe 平台中的定期計費引擎。它的工作是生成發票。 然後，結算引擎會自動收取這些發票的付款。
 
@@ -206,8 +206,8 @@ Stripe Billing 是 Stripe 平台中的定期計費引擎。它的工作是生成
 Manually(手動): 一次性發票
 Automatically(自動): 定期訂閱。
 
-## Manually
-## Automatically
+### Manually
+### Automatically
 
 定義產品
 
@@ -246,8 +246,4 @@ stripe.subscriptions.create({
   items: [{plan: plan.id}],
 });
 ```
-最後附上可以測試的信用號 [StripeCreditCard](https://stripe.com/docs/testing#cards)
-
----
-
-文章會持續更新，喜歡的話可以在瀏覽器將文章加入 bookmark
+最後附上可以測試的信用卡 [StripeCreditCard](https://stripe.com/docs/testing#cards)
