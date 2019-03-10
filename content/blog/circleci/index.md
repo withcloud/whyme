@@ -1,6 +1,6 @@
 ---
 title: "CircleCI 如此簡單"
-date: "2019-03-010T20:00:00+08:00"
+date: "2019-03-10T20:00:00+08:00"
 description: "CircleCI 讓自己多一雙手和24監控"
 authors:
   - name: Srib Chao
