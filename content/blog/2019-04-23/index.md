@@ -12,9 +12,9 @@ authors:
 4 月 23 日（二）
 ---
 
-早上唔知 srib 和 ben 搞了什麼，所以這裡不增加 withbeacon 的描術
+早上 srib 和 ben， 一起將 withbeacon 放上 Google Play Store，之後續繼和 ben 整 modify beacon, 而 srib 把 withbeacon liftcircle 整好了，新增了停止掃描 beacon。
 
-下午新增了 macau chat mobile，
+下午新增了 macau chat mobile，而 srib 因為情緒問題已舍棄了大家回去了。
 
 - withbeacon: 無
 - macau-chat:
