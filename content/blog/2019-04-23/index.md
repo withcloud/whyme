@@ -16,7 +16,7 @@ authors:
 
 下午新增了 macau chat mobile，而 srib 因為情緒問題已舍棄了大家回去了。
 
-- withbeacon: 無
+- withbeacon: 放上 Google Play Store, withbeacon liftcircle 和 停止掃描 beacon function
 - macau-chat:
   - mobile: just create expo project
   - postmark: 打好個 template
