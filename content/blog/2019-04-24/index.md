@@ -14,8 +14,8 @@ authors:
 
 而在 macau-chat 方面，我在昨天晚上做了 explore 和 profile pages 的 ui,今天下午和 comus 一起做 macau-chat 的 graphql, 是關於登入輸入 username 和查找 username
 
-- withbeacon: 
-- macau-chat: withbeacon modify
+- withbeacon: withbeacon modify
+- macau-chat: 
   - site: explore 和 profile pages 的 ui
   - api: searchUserByUserName 和 EditUser
   - app: 無
