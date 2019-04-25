@@ -7,7 +7,7 @@ authors:
     avatar: /team/srib.jpg
 ---
 
-4 月 22 日（一）
+4 月 24 日（三）
 ---
 
 早上和 Ben 一起做 withbeacon 的 modify, java 寫好卻一直運行不了。下午得到 comus 提示是權限問題就做好了。
